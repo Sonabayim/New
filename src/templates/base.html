@@ -1,0 +1,308 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nicecho</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+  <meta name="description" content="NICECHO is a place where young generation improve yourself. Welcome to around us.">
+  <meta name="keywords" content="www.nicecho.com">
+  <meta name="author" content="Nicecho Team">
+
+  <!-- style.css-->
+  <link rel="stylesheet" type="text/css" href="{% static "assets/css/login.css"%}">
+
+  <!-- responsive.css-->
+  <link rel="stylesheet" type="text/css" href="{% static "assets/css/login_responsive.css"%}">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+
+  <link rel="icon" href="{%static "assets/img/favicon.ico" %}" type="image/x-icon">
+
+  <!-- font-awesome-->
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <section class="introduction_page">
+    <div class="container">
+      <div class="row">
+        <div class="logo_box col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <a href=""><img src="{%static "assets/img/logo.png" %}"></a>
+          <div class="nicecho_info">
+            <p>NICECHO is a place where young generation improve yourself. Welcome to around us.</p>
+          </div>
+        </div>
+        <div class="sign_box col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="login_box col-lg-11 col-lg-offset-1 col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <form action="/home/" method="" id="login_form" class="form-inline" >
+              {{ form|crispy }}
+              
+              <button type="submit" class="btn btn-default" id="log_in_btn">Log In</button>
+            </form>
+          </div>
+          <div class="sign_up_box col-lg-11 col-lg-offset-1 col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="title">
+              <h3>Sign Up</h3>
+            </div>
+            <form action="" method="" id="sign_up_form">
+
+              {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'auth_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'auth_login' %}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'registration_register' %}">Register</a>
+                </li>
+              {% endif %}
+
+
+              <!-- <div class="form-group">
+                    <i class="fa fa-exclamation-circle name_error"></i>
+                  <input type="text" class="sign_input form-control" name="name" id="name" placeholder="*Name">
+                  <i class="fa fa-check name_succes"></i>
+                </div>
+                <div class="form-group">
+                  <i class="fa fa-exclamation-circle surname_error"></i>
+                  <input type="text" class="sign_input form-control" name="surname" id="surname" placeholder="*Surname">
+                  <i class="fa fa-check surname_succes"></i>
+                </div>
+                <div class="form-group">
+                  <i class="fa fa-exclamation-circle username_error"></i>
+                  <input type="text" class="sign_input form-control" name="username" id="username" placeholder="*Username">
+                  <i class="fa fa-check username_succes"></i>
+                </div> -->
+               <!--  <div class="form-group">
+                  <i class="fa fa-exclamation-circle email_error"></i>
+                  <input type="email" class="sign_input form-control" name="email" id="email" placeholder="*Email">
+                  <i class="fa fa-check email_succes"></i>
+                </div>
+                <div class="form-group">
+                  <i class="fa fa-exclamation-circle pwd_error"></i>
+                  <input type="password" class="sign_input form-control" name="password" id="pwd" placeholder="*Password">
+                  <i class="fa fa-check pwd_succes"></i>
+                </div>
+                <div class="form-group">
+                  <i class="fa fa-exclamation-circle repwd_error"></i>
+                  <input type="password" class="sign_input form-control" name="repassword" id="repwd" placeholder="*Confirm password">
+                  <i class="fa fa-check repwd_succes"></i>
+                </div>
+                <div class="form-group">
+                <select class="select_position">
+                  <option value="" disabled selected hidden>Select your position</option>
+                  <option value="student">Student</option>
+                  <option value="university">Entrant</option>
+                  <option value="abiturient">Other</option>
+                </select>&nbsp;&nbsp;
+                <select class="select_gender">
+                  <option value="" disabled selected hidden>Gender</option>
+                  <option value="student">Male</option>
+                  <option value="university">Female</option>
+                </select> -->
+                <button type="submit" class="btn btn-default sign_up_btn">Sign Up</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login_footer container">
+      <div class="row">
+        <div class="terms col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+          <a href="" data-toggle="modal" data-target="#terms_conditions_modal">Terms and Conditions</a>
+        </div>
+        <div class="privacy col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+          <a href="">Privacy Policy</a>
+        </div>
+        <div class="about col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+          <a href="" data-toggle="modal" data-target="#about_us_modal">About Us</a>
+        </div>
+        <div class="language col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center">
+          <div class="dropup">
+            <a class="dropdown-toggle" type="button" data-toggle="dropdown">English&nbsp;&nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Azərbaycan dili</a></li>
+                <li><a href="#">Русский</a></li>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- TERMS AND CONDITIONS MODAL -->
+  <div id="terms_conditions_modal" class="terms_conditions_modal modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">İstifadəçi Qaydaları</h4>
+            </div>
+            <div class="modal-body">
+              <div class="terms_article">
+
+            <h4><b>Nicecho-ya xoş gəlmisiniz!</b></h4>
+            <p>Hər bir ölkənin, cəmiyyətin qaydaları olduğu kimi, bizim Nicecho diyarımızın da öz qaydaları vardı ki, Marslı şahzadə tərəfindən hazırlanmışdır 😊</p><br>
+            <b>1.Nicecho Ctrl+C /Ctrl+V -dən başqa heçnə bilməyənlər üçün deyil.</b>
+            <p>Bəli, əgər yalnız məlumat toplamaq üçün gəlmisinizsə, qapılarımız həmişə sizə açıqdır.</p>
+            <b>2.Nicecho-nu Facebookla qarışdırmayın. </b>
+            <p>Saytda yalnız və yalnız kontentə uyğun olaraq suallarınızı nümayəndələrə və digər üzvlərə verə bilərsiniz. </p>
+            <b>3.Nicecho siyasi və ya dini sayt deyil.</b>
+            <p>Bunun üçün ayrıca saytlar var, orada istədiyiniz qədər bu mövzuda danışa bilərsiniz.  </p>
+            <b>4.Rəy xətrinə rəy yazmayın!</b>
+            <p>Fikirlərinizi düzgün və səlis bildirin. Azərbaycan dilinin qrammatik qayda-qanunlarına riaəyət edin. Fikrinizi izah etmək üçün smaylik/şəkil/mem-lərdən istifadə etməyin. Boş-boş “Əla”, “yaxşı məqalədir” kimi rəylər bildirməyin faydası olmadığını ümid edirəm ki, anlayırsınız. Bunun üçün gözəl “buta” sistemimiz var. </p>
+            <b>5.Digər istifadəçilərə hörmətsizlik etmək qadağandır.</b>
+            <p>Konflikt hər yerdə gözlənilməyən anda baş verə bilər. Özünüzə hörməti isə siz həmişə edə bilərsiniz.</p>
+            <p>Saytın qaydaları hər an istifadəçilərdən asılı olaraq dəyişə bilər. Ona görə dəyişikliyə hər zaman hazır olun ~ .</p><br>
+
+            <h4><b>Qeydiyyat</b></h4>
+            <p>Nicecho-ya daxil olduqda saytdan qeydiyyat keçərək istədiyiniz məlumatı daha tez əldə edə bilmək şansına malik olursunuz.</p>
+            <p>Qeydiyyatdan</p>
+            <b>Tələbə</b><br>
+            <b>Abiturient</b><br>
+            <b>Universitet</b>
+            <p>olaraq keçə bilərsiniz. </p>
+            <p>Qeydiyyatdan keçən bütün dövlət universitetləri pulsuz istifadəçi olaraq event və məqalə paylaşa bilərlər. Özəl universitetlər müvafiq istifadəçi paketi seçə bilərlər. (Ətraflı məlumat üçün İstifadəçi paketləri bölməsinə bax)</p>
+            <p>Qeydiyyatda siz cinsiniz*/ad və soyad(və ya nickname)*/email*/parol*/doğum gününüz* qeyd etməlisiniz.</p>
+            <p>Qeydiyyatı uğurla başa vurduqdan sonra siz Nicecho-da <b>"Oxucu"</b> statusu qazanmış olursunuz :</p>
+            <b>ixtisaslar haqqında məlumatı universistetlərdən birbaşa öyrənə bilmək</b><br>
+            <b>ixtisasınızla bağlı geniş məlumatı öyrənərək düzgün istiqamətlənmək</b><br>
+            <b>ixtisasınızla bağlı məqalə oxuyaraq suallarınızı vermək(gün ərzində 2 dəfə)</b><br>
+            <b>Gün ərzində bir dəfə rəy bildirmək</b><br>
+            <b>Mənim qeydlərim bölməsində məqalənizin qaralama formasını yazmaq və digər qeydlərinizi aparmaq</b><br>
+            <b>Bəyəndiyiniz məqalələri "boxça"-ya əlavə etmək</b><br>
+            <b>5 "Buta" və 2 "paxlava" </b><br><br>
+            <p><b>Oxucu- entuziast(enthusiast) –</b>İstifadəçiyə oxuduğu məqalələrdə hər ay 50 rəy bildirmək şansı qazandırır. 10 "buta"/ 10  "paxlava" istifadəçi əldə edir.</p>
+            <p>Bu mərhələdə olmaq üçün, istifadəçinin 2 rəyini ən azı moderator və ya istifadəçilər tərəfində xeyirli bilərək qiymətləndirilmiş olmalı, və ya məqalə yazaraq istifadəçilər tərəfindən ən azı 15 buta ilə dəyərləndirilməlidir.</p>
+            <p>Hər ay 2 nümayəndə ilə danışıq imkanı.</p>
+            <p><b>Yazar-</b>İstifadəçiyə sonsuz rəy bildirmək, digər istifadəçilərə mesaj yazmaq və hər ay 5 nümayəndə ilə danışıq imkanı. 30 "buta"/15 "paxlava" qazanmaq şansı.</p>
+            <p>İstifadəçi öz ixtisasının nümayəndəsi olmaq şansı qazanır.</p>
+            <p>Bu mərhələdə olmaq üçün, istifadəçinin ən azı 10-dan çox (profil mövzular haqqında olmalı) məqaləsi uğurlu olmalıdır.</p>
+            <p><b>Professional –</b>Bu mərhələdə istifadəçinin artıq 100-də çox məqaləsi (90+ buta toplamalıdır) uğurlu olmalıdır.İstifadəçi "hire me" və "reklam" bölməsinə giriş qazanır. İstifadəçi bizdən müxtəlif hədiyyə və pul mükafatı qazanmaq şansı əldə edir. Hesabda 50 buta/ 25 "paxlava" hədiyyə edilir. </p>
+            <p><b>İxtisas nümayəndəsi –</b>İstifadəçi Yazar və yuxarı mərhələdə olduqda nümayəndə olaraq ixtisasını təmsil edə bilər.</p>
+            <p>Nümayəndə olmaq istifadəçiyə digər nümayəndələrlə əlaqə qurmaq və məqaləsinin moderator baxışından keçmədən əsas səhifəyə yerləşdirilmə şansını qazandırır.</p>
+            <p><b>Tartar sakini –</b>İstifadəçi qaydalarını pozan hər bir kəs ilk xəbərdarlıqdan sonra Tartara düşür, ona görə ehtiyatlı olun 😊</p>
+            <p>*İstifadəçi qaydaları dəyişilə bilər.</p><br>
+
+            <h4><b>“Buta” və “Paxlava”</b></h4>
+            <p><b>Buta –</b>istifadəçini qiymətləndirmək üçün yaradılmış bir sistemdir. Yazılan rəy və suallar məhz buta ilə dəyərləndirilir. Hər bir istifadəçi digər istifadəçinin əməyini öz hesabından ona “buta” verməklə dəyərləndirə bilər(1 saat ərzində geri ala bilər). Buta istifadəçinin subyektiv fikirlərini göstərən bir sistemdir. Sizin məqalənizə olan fikri əks etdirmir və reytinqə təsir göstərmir. Ancaq butanın az olması sizin istifadəçi hüquqlarınızı məhdudlaşdıra bilər. Buta bir mərhələdən digər mərhələyə keçmək üçün gözəl şansdır</p>
+            <p>Necə buta qazanmaq olar?</p>
+            <b>Məqalələrdə faydalı rəy bildirməklə </b><br>
+            <b>Faydalı (saytın kontentinə uyğun) sual verməklə </b><br>
+            <b>Saytın inkişafında yardım etməklə :blush: </b><br>
+            <p>Buta sayı</p>
+            <b>0-dan çox butası olan istifadəçi gün ərzində 3 rəy yaza bilər.</b><br>
+            <b>5-dən çox butası olan istifadəçi gün ərzində 2 sual verə bilər</b><br>
+            <b>15-dən çox butası olan istifadəçi gün ərzində 5 nümayəndəyə yaza bilər.</b><br>
+            <b>98-dən çox butası olan istifadəçi “PYA”*-a cəmiyyətinə üzv olur.</b><br>
+            <b>0-dan aşağı butası olan istifadəçi 3gündən bir rəy və sual yaza bilər.</b><br>
+            <b>-5-dən aşağı butası olan istifadəçi 5 gündən bir rəy və 7 gündən sonra sual yaza bilər.</b><br>
+            <b>-15-dən aşağı butası olan istifadəçi 7 gündən sonra bir rəy yaza bilər.</b><br>
+            <b>-25-dən aşağı butası olan istifadəçi “Tartar Sakini” statusunu qazanaraq, saytda rəy yazmaq hüququnu da itirir.</b><br><br>
+            <p>Əgər istifadəçi ay ərzində məqalə yazmayıbsa bir buta, rəy bildirməyibsə 3 buta, sual yazmayıbsa 2 buta hesabından çıxlır.</p>
+            <b>Paxlava və ya necə Reytinqdə ola bilərəm?</b><br>
+            <p>Yazılan məqalələr "paxlava" ilə dəyərləndirilir.</p>
+            <p>Reytinq məhz "paxlava" sayı ilə dəyərləndirilir. Reytinqlər hər 7 gündən bir sıfırlanır. Reytinqdə məqalələri tez-tez çıxan və oxucu kütləsi tərəfindən müsbət qarşılanan istifadəçilər olur. </p>
+            <p>Yazar/Professional mərhələsində olan istifadəçilər reytinqdə yazdığı məqalələrinə görə +5 paxlava ilə dəyərləndirlir.</p>
+            <p>İstifadəçi mərhələsindən asılı olmayaraq istənilən şəxs reytinqdə birinci yeri əldə edə bilər.</p>
+            <p>Reytinqin sıfırlanması istifadəçilərin tez bir zamanda yeni məqalə yazmaları və yeni istifadəçilərin reytinqdə yer almaları üçün şansın yaradılmasıdır.</p>
+            <p>Dərc edilmiş məqalə 5 gün ərzində(paylaşdığı müddətdən hesablanaraq) dəyərləndirilə bilər.</p>
+            <p><b>Sehirli Sandıqça –</b>Yazdığınız maraqlı ancaq mövzudan kənar(az da olsa elmlə əlaqəsi olan) məqalələr moderatordan keçdikdən sonra sehirli sandıqçaya düşür 😊</p>
+            <p>Sandıqçada olan məqalələrə yalnız Yazar/Professional mərhələsində olan istifadəçilər baxa bilər və onları buta ilə qiymətləndirərək əsas səhifədə yerləşdirə bilər. </p>
+            <p>Məqalə səhifədə "məqalə yaz" bölməsinə göndərmək mümkündür və göndərdikdən sonra sizə e-mail vasitəsilə moderatordan 3 tip cavab gələ bilər:</p>
+            <b>Məqaləniz moderator tərəfindən bəyənildi </b><br>
+            <b>Məqaləniz Sehirli Sandıqçaya düşdü. </b><br>
+            <b>Məqaləniz marslılar tərəfindən oğurlandı( məqalənizin uyğun olmadığından xəbər verir). </b><br><br>
+            <p>Yazılan məqalələr ixtisasınızla bağlı olduqda və bütün qaydalar çərçivəsinə daxil olduğu zaman Sandıqçaya düşmədən əsas səhifədə yerləşdirilir. </p>
+            <b>Profil(Şəxsi kabinet).</b><br>
+            <p>Qeydiyyatdan keçdikdən sonra istifadəçi şəxsi kabinetinə daxil olaraq</p>
+            <b>Şəxsi məlumatı dəyişmək</b><br>
+            <b>Profil şəkli əlavə etmək (Şəkil səhifəyə daxil olduqda buta olur)</b><br>
+            <b>Mənim boxçam (Bəyəndiyiniz məqalə, rəy, sualları burada izləyə bilər və yaddaşda saxlaya bilərsiniz)</b><br>
+            <b>Mənim qeydlərim( Məqalə üçün qeydlər apara və ya məqalənizin qaralama forması kimi yaddaşda saxlaya bilərsiniz)</b><br>
+            <b>İzləyirəm (İstifadəçi/Universitet/Şirkət-in fəaliyyətini izləyə və ən son yenilikləri öyrənə bilərsiniz)</b><br>
+            <b>Mənim reytinqim və buta sayı(İstifadəçi statusu)</b><br>
+            <b>Mesajlar</b><br>
+            <b>Aktiv rejim qrafiki (saytda aktivlik zamanı və sayda qeydiyyatdan keçdiyi vaxt)</b><br><br>
+            <b>İxtisas nümayəndəsi və onun vəzifəsi</b><br>
+            <p>İxtisas nümayəndəsi müvafiq universitetin ixtisasına uyğun olaraq müəyyən suallara cavab verir. İstədiyiniz universitetin ixtisas bölümünə daxil olduqda sağ tərəfdə ixtisas nümayəndəsinin profili vardır ki, bu da onunla onlayn əlaqə yaratmağa imkan verir.</p>
+            <p>İxtisas nümayəndələri hər 3 aydan bir (hər semestr) dəyişilir. İnsanların subyektiv fikirlərə malik olmasını nəzərə alaraq, abiturientlərə və digər gənclərə ixtisas/universitetlə bağlı məlumatın bir nəfər tərəfindən deyil, müxtəlif şəxslər tərəfindən öyrənməyi daha düzgün olduğunu düşündük.</p>
+            <p>Hər bir istifadəçi öz universitetinin ixtisas nümayəndəsi ola bilər. Bunun üçün öz ixtisasınız haqqında məqalə hazırlayaraq "İxtisas nümayəndəsi" başlığı altında moderatora məqalənizi göndərə bilərsiniz. </p>
+            <p>İxtisas nümayəndəsinin əsas vəzifəsi :</p>
+            <b>Universitet haqqında ətraflı məlumat verməli</b><br>
+            <b>İxtisası haqqında ətraflı məlumatlı olmalı</b><br>
+            <b>Oxuduğu ixtisasın həmin universitetdə özəlliyini (müsbət və mənfi tərəflərini açıqlamağı bacarmalıdır)</b><br><br>
+
+
+            <h4><b>PYA(Professional Yazarlar Asossasiyası)</b></h4>
+            <p>İstifadəçi “Professional” statusunu qazandıqdan sonra, PYA cəmiyyətinə daxil olur ki, yazdığı hər bir uğurlu, reytinqdə ilk 3-lükdə olan məqaləsi(məqalənin mövzusu birbaşa ixtisası ilə bağlı olmalı) pul mükafatı ilə dəyərləndirilir. Pul mükafatı qazanılan paxlava hesabına görə müəyyən olunur. Nə qədər çoxdursa, pulun miqdarı da ona görə çox olacaqdır.</p>
+            <p>(Hüquqi tərəflər və pul köçürmə sistemi qeyd olunmalıdır.)</p>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+<!-- TERMS AND CONDITIONS MODAL END -->
+
+<!-- ABOUT US MODAL -->
+  <div id="about_us_modal" class="about_us_modal modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Haqqımızda</h4>
+            </div>
+            <div class="modal-body">
+              <div class="terms_article">
+                <h4><b>Nicecho nədir?</b></h4>
+                <p>Nicecho gənc nəslin inkişaf edərək öyrənərək öyrətməsi üçün nəzərdə tutulan bir platformadır. <br><br>
+            Gündəmdə olan problemlər və onların həlli.<br><br>
+            Bugün tələbələrdən sorğu keçirsəniz (mən bir qismi ilə keçirmişəm) və onlardan niyə məhz bu ixtisası seçdiyini soruşsanız 89%-i sizə “Bəxt”, “Nə bilim, elə alındı, heç bura istəmirdim ki...”, “Balıma uyğun olanı yazdım” və sair kimi cavablarını eşidəcəksiniz. Bu da heç xoşagələn hal deyildir. Deyək ki, abiturient olduğu dövrdə imtahana hazırlaşdığına görə zamanı olmamışdır və bu fikirlə növbəti sualı verərək daha da təəccüblənəcəksiniz: “Hal-hazırda oxuduğun ixtisas haqqında nə bilirsən?” sualına “Heç özüm bilmirəm, internetdə axtardım tapa bilmədim”, “Nə bilim. Elə də nəsə bilmirəm, institutda öyrədəcəklər də, nəyə axtarıram ki” və sair kimi cavabları eşitdikdə niyə ölkəmizdə işsizlik səviyyəsinin çox olduğunu da anlayırsınız. Yeniliklərin və innovativ ideyaların olmadığına səbəb məhz bilgisizlikdir. Bununla yanaşı öz dilimizdə məlumatın qıtlığı da öz təsirini göstərərək məlumat toplamaq istəyən hər bir gəncin qarşısında əlavə dildə məlumat axtarmağa məcbur edir. Dil bilmək yaxşıdır, ancaq ana dilini əvəz etmək üçün deyil. Bu fikirlərlə, problemin həllini Nicecho-da tapdıq.<br><br>
+            Nicecho abiturientlərə yerli və xarici universitetlərdə keçirilən ixtisaslar barəsində geniş məlumat əldə etməyə və həmin ixtisasda təhsil alan tələbələrlə online məlumat almağa imkan verərək, həmin abiturientlərə seçimlərini dəqiq və qısa zamanda etməyə imkan verir. Ancaq Nicecho təkcə abiturientlərlə kifayətlənmir, platforma yenicə universitetə daxil olan tələbələrə də öz yardımını əsirgəmir. Onların düzgün vaxtın idarə edilməsi və ixtisasa uyğun olaraq necə karyera addımlarını atmağında köməklik göstərərək məlumatlandırır. Nicecho öyrənməyə və öyrətməyə səsləyən bir platformadır. 
+            </p><br>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+<!-- ABOUT US MODAL END -->
+
+
+
+
+
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="assets/js/login.js"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

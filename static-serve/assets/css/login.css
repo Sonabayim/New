@@ -1,0 +1,303 @@
+
+
+@font-face {
+  font-family: "SourceSansProSemiBold";
+  src: url("../font/Source_Sans_Pro/SourceSansPro-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansProRegular";
+  src: url("../font/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+}
+
+body{
+	margin: 0px;
+	overflow-x: hidden;
+}
+
+/*
+** INTRODUCTION SECTION
+*/
+
+section.introduction_page{
+	width: 100%;
+	height: 670px;
+	background: url("../img/bcover.jpg") no-repeat top;
+	background-size: cover;
+	position: relative;
+}
+
+section.introduction_page .logo_box{
+	margin-top: 4%;
+}
+
+section.introduction_page .logo_box a img{
+	width: 60%;
+}
+
+section.introduction_page .logo_box .nicecho_info{
+	margin-top: 8%;
+}
+
+section.introduction_page .logo_box .nicecho_info p{
+	color: #1c407a;
+    font-size: 20px;
+    font-family: "SourceSansProRegular", sans-serif;
+    text-align: justify;
+}
+
+section.introduction_page .sign_box{
+	padding-top: 4%;
+}
+
+section.introduction_page .sign_box input{
+	border: 1px solid #cbcdce;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: none;
+}
+
+section.introduction_page .sign_box select{
+	font-size: 14px;
+	border: 1px solid #cbcdce;
+	border-radius: 3px;
+	padding: 6px;
+	outline: none;
+}
+
+section.introduction_page .sign_box .login_box button{
+	color: #1c407a;
+	border: 1px solid #cbcdce;
+	font-family: "SourceSansProSemiBold", sans-serif;
+	float: right;
+	padding: 6px 8px;
+}
+
+section.introduction_page .sign_box .login_box button:hover{
+	color: white;
+	background: #1c407a;
+	border: 1px solid #1c407a;
+	transition: 0.8s;
+}
+
+section.introduction_page .sign_box .sign_up_box .title{
+	padding: 4% 0%;
+}
+
+section.introduction_page .sign_box .sign_up_box .title h3{
+	font-family: "SourceSansProSemiBold", sans-serif;
+	color: #1c407a;
+	margin: 0;
+}
+
+section.introduction_page .sign_box .sign_up_box form .form-group{
+	position: relative;
+}
+
+section.introduction_page .sign_box .sign_up_box form i.fa-exclamation-circle , section.introduction_page .sign_box .sign_up_box form i.fa-check{
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  color: transparent;
+}
+
+i.name_error,i.surname_error,i.username_error,i.email_error,i.email_error,i.pwd_error,i.repwd_error,i.name_succes,i.surname_succes,i.username_succes,i.email_succes,i.pwd_succes,i.repwd_succes{
+  top: 8px;
+}
+
+section.introduction_page .sign_box .sign_up_box form button.sign_up_btn {
+    float: right;
+    color: #1c407a;
+    border: 1px solid #cbcdce;
+    font-family: "SourceSansProSemiBold", sans-serif;
+    padding: 6px 8px;
+}
+
+section.introduction_page .sign_box .sign_up_box form button.sign_up_btn:hover {
+    color: white;
+	background: #1c407a;
+	border: 1px solid #1c407a;
+	transition: 0.8s;
+}
+
+section.introduction_page .scroll_down{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+}
+
+section.introduction_page .scroll_down i{
+	border: 1px solid #e0e2e2;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 22px;
+    background: white;
+    color: #99daf9;
+}
+
+section.introduction_page .scroll_down i:hover{
+    color: #1199da;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+section.introduction_page .scroll_down h4{
+	font-family: "SourceSansProSemiBold",sans-serif;
+	color: #1c407a;
+	margin: 0;
+	margin-top: 4px;
+}
+
+/*
+** ABOUT SECTION
+*/
+
+section.about{
+	width: 100%;
+	background: #ffffff;
+	padding: 50px 0px;
+}
+
+section.about .main{
+	margin-bottom: 50px;
+}
+
+section.about .note h3{
+	margin-top: 0px;
+	color: #1c407a;
+	font-family: "SourceSansProSemiBold",sans-serif;
+}
+
+section.about .note p{
+	color: #9CA8B7;
+	text-align: justify;
+	font-size: 16px;
+}
+
+section.about .photo{
+	width: 100%;
+	height: 200px;
+	background: url("../img/bcover.jpg") no-repeat;
+	background-size: cover;
+}
+
+
+/*
+** FOOTER
+*/
+
+footer{
+	background: #f1faff;
+    padding: 20px 0px;
+}
+
+footer .footer_logo{
+	width: 200px;
+}
+
+footer .footer_logo img{
+	width: 100%;
+}
+
+footer .nicecho_info{
+	margin-top: 20px;
+}
+
+footer .nicecho_info .contact{
+	width: 92%;
+	float: right;
+}
+
+footer .nicecho_info .contact ul{
+	font-family: "SourceSansProRegular",sans-serif;
+	color: #1c407a;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+footer .nicecho_info .contact ul li{
+	margin-bottom: 5px;
+}
+
+footer .nicecho_info .link_list ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+footer .nicecho_info .link_list ul li{
+	display: inline-block;
+}
+
+footer .nicecho_info .link_list ul li a{
+	padding: 8px 15px;
+	color: #1c407a;
+	font-family: "SourceSansProRegular",sans-serif;
+	font-size: 16px;
+}
+
+footer .nicecho_info .language .dropup a{
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	color: #1c407a;
+	padding: 0;
+	cursor: pointer;
+	font-family: "SourceSansProRegular",sans-serif;
+}
+
+footer .nicecho_info .language .dropup a:hover{
+	text-decoration: none;
+	background: transparent;
+	color: #1c407a;
+}
+
+footer .nicecho_info .language .dropup ul li a{
+	color: #1c407a;
+	font-size: 16px;
+	padding: 0% 5%;
+}
+
+footer .nicecho_info .language .dropup ul li a:hover{
+	background: #c0d3f1;
+}
+
+footer .nicecho_info .copyright span{
+	font-family: "SourceSansProSemiBold",sans-serif;
+	color: #1c407a;
+}
+
+
+/*
+** MODALS
+*/
+
+.modal-header {
+    border-bottom: 1px solid #657186 !important;
+}
+
+.modal .modal-dialog .modal-content .modal-header h4{
+	font-family: "SourceSansProSemiBold",sans-serif;
+	font-size: 20px;
+    color: #1c407a;
+}
+
+.modal-body{
+	color: #657186;
+	font-family: "SourceSansProRegular",sans-serif;
+	font-size: 16px; 
+}
+
+.modal .modal-dialog .modal-content .modal-body h4{
+	font-family: "SourceSansProSemiBold",sans-serif;
+	font-size: 18px;
+    color: #1c407a;
+}
+
+.modal .modal-dialog .modal-content .modal-body b{
+    color: #1c407a;
+    font-family: "SourceSansProSemiBold",sans-serif;
+}
+

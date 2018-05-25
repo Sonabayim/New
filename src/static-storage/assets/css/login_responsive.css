@@ -1,0 +1,61 @@
+@media (max-width: 1199px) and (min-width: 992px){
+	section.introduction_page .sign_box .login_box form input{
+		width: 170px;
+	}
+}
+
+@media (max-width: 991px){
+	section.introduction_page .logo_box{
+		text-align: center;
+	}
+	section.introduction_page .logo_box .nicecho_info {
+    	margin-top: 3%;
+	}
+	section.introduction_page .sign_box .login_box button{
+		color: white;
+    	background: #1c407a;
+    	border: 1px solid #1c407a;
+	}
+	section.introduction_page .sign_box .sign_up_box form button.sign_up_btn{
+		color: white;
+    	background: #1c407a;
+    	border: 1px solid #1c407a;
+	}
+	section.introduction_page .login_footer a {
+    	font-size: 14px;
+	}
+	section.introduction_page .login_footer .dropup a {
+    	font-size: 14px;
+	}
+}
+
+@media (max-width: 767px){
+	section.introduction_page .sign_box select {
+    	font-size: 12px;
+    	padding: 5px;
+	}
+	section.introduction_page .sign_box .sign_up_box form button.sign_up_btn {
+    	padding: 4px 5px;
+    	font-size: 12px;
+	}
+	section.introduction_page .login_footer .terms,section.introduction_page .login_footer .privacy,section.introduction_page .login_footer .about,section.introduction_page .login_footer .language{
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 422px){
+	section.introduction_page .sign_box .sign_up_box form button.sign_up_btn {
+    	margin-top: 8%;
+    	padding: 6px 8px;
+    	font-size: 14px;
+	}
+}
+
+@media (max-width: 406px){
+	section.introduction_page .login_footer a {
+    	font-size: 12px;
+	}
+	section.introduction_page .login_footer .dropup a {
+    	font-size: 12px;
+	}
+}
