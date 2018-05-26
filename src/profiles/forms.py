@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-
+from .choices import *
 User = get_user_model()
 
 class RegisterForm(forms.ModelForm):
@@ -8,10 +8,12 @@ class RegisterForm(forms.ModelForm):
     fields, plus a repeated password."""
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    # gender    = forms.ForeignKey(choices=GENDER_CHOICES,default=1)
+    
 
     class Meta:
         model = User
-        fields = ('username', 'email',)
+        fields = ('username', 'email', )
 
     def clean_email(self):
         email = self.cleaned_data.get("email")
@@ -33,6 +35,7 @@ class RegisterForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
+        user.gender_choices(self.cleaned_data['gender'])
         user.is_active = False
         # create a new user hash for activating email.
 

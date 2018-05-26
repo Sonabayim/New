@@ -25,7 +25,7 @@ from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-     url(r'^home/', speciality_listview),
+     url(r'^home/', speciality_listview, name ='home'),
      # url(r'^home/', SpecialityListView.as_view()),
      # url(r'^article/$', PostListView.as_view()),
      url(r'^article/',include('Post.urls')),

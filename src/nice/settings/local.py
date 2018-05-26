@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #third part apps
     'crispy_forms',
-    'registration',
     'bootstrap3',
     #nicecho's apps
     'university',

@@ -85,6 +85,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="main_part">
 							<!-- WRITE ARTICLE -->
+							{% if request.user.is_authenticated %}
 							<div class="ask_question">
 								<div class="write_question">
 									<textarea placeholder="Ask question"></textarea>
@@ -111,6 +112,8 @@
 									</form>
 								</div>
 							</div>
+							{% endif %}
+
 							<!-- WRITE ARTICLE END -->
 								{% for post in post_list %}
 								<div class="shared_news">

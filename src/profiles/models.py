@@ -3,7 +3,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
-
+from .choices import *
 from .utils import code_generator
 User = settings.AUTH_USER_MODEL
 
@@ -27,9 +27,12 @@ class Profile(models.Model):
 	activated		= models.BooleanField(default=False)
 	timestamp     	= models.DateTimeField(auto_now_add=True)
 	updated       	= models.DateTimeField(auto_now=True)
-
+	gender			= models.IntegerField(choices=GENDER_CHOICES,default=1)
 	objects = ProfileManager()
 
+	def __str__(self):
+		return self.user.gender
+		
 	def __str__(self):
 		return self.user.username
 
