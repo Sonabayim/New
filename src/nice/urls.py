@@ -17,25 +17,22 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from django.views.generic import TemplateView
 from speciality.views import  SpecialityListView, speciality_listview
 from Post.views import post_listview, PostListView
 
 from profiles.views import ProfileFollowToggle, RegisterView, activate_user_view
-
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='landing.html')),
-    # url(r'^home/', TemplateView.as_view(template_name='Home_p/home.html')),
      url(r'^home/', speciality_listview),
      # url(r'^home/', SpecialityListView.as_view()),
      # url(r'^article/$', PostListView.as_view()),
      url(r'^article/',include('Post.urls')),
      # url(r'^article/(?P<pk>\d+)/$', PostListView.as_view()),
-    url(r'^register/$', RegisterView.as_view(), name='register'),
+    url(r'^$', RegisterView.as_view(), name='register'),
 
-
+    url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^u/', include('profiles.urls', namespace='profiles')),
 
 

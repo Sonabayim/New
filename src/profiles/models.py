@@ -7,7 +7,6 @@ from django.core.urlresolvers import reverse
 from .utils import code_generator
 User = settings.AUTH_USER_MODEL
 
-
 class ProfileManager(models.Manager):
 	def toggle_follow(self,request_user, username_to_toggle):
 		profile_ = Profile.objects.get(user__username__iexact=username_to_toggle)
@@ -28,7 +27,6 @@ class Profile(models.Model):
 	activated		= models.BooleanField(default=False)
 	timestamp     	= models.DateTimeField(auto_now_add=True)
 	updated       	= models.DateTimeField(auto_now=True)
-
 
 	objects = ProfileManager()
 

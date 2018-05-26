@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
@@ -6,13 +8,11 @@ from .models import Speciality
 from Post.models import Post
 from Post.forms import PostCreateForm
 from django.contrib.auth import get_user_model
-
+# from 
 # Create your views here.
-
+@login_required()
 def speciality_listview(request):
 	template_name = 'home.html'
-	# pk = self.kwargs.get("pk")
-	# print(pk)
 	userset = get_user_model()
 	userset = userset.objects.all()
 	queryset = Speciality.objects.all()
