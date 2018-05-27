@@ -1,0 +1,29 @@
+@media (min-width: 992px){
+  section.main_section .article .post_comments .add_comment .your_comment form .write_comment button{
+  	display: none;
+  }
+}
+
+@media (max-width: 991px){
+	section.main_section .col-sm-6{
+		padding: 0;
+	}
+	section.main_section .article .post_comments .add_comment .your_comment form .write_comment input {
+    	width: 90%;
+	}
+}
+
+@media (min-width: 768px){
+	section.main_section .mobile_menu{
+		display: none;
+	}
+	.mobile_header{
+		display: none;
+	}
+}
+
+@media (max-width: 767px){
+	section.main_section {
+    	padding-top: 56px;
+	}
+}

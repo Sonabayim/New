@@ -28,6 +28,7 @@ class Profile(models.Model):
 	timestamp     	= models.DateTimeField(auto_now_add=True)
 	updated       	= models.DateTimeField(auto_now=True)
 	gender			= models.IntegerField(choices=GENDER_CHOICES,default=1)
+	position 		= models.IntegerField(choices=POSITION_CHOICES,default=1)
 	objects = ProfileManager()
 
 	def __str__(self):
@@ -63,7 +64,7 @@ class Profile(models.Model):
 def post_save_user_receiver(sender, instance, created, *args, **kwargs):
 	if created:
 		profile, is_created = Profile.objects.get_or_create(user=instance)
-		default_user_profile = Profile.objects.get_or_create(user__id=1)[0]
+		default_user_profile = Profile.objects.get_or_create(user__id=1)
 		default_user_profile.followers.add(instance)
 		profile.followers.add(default_user_profile.user)
 		profile.followers.add(2)

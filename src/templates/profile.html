@@ -1,0 +1,276 @@
+{% load static %}
+{% include "snippets/header.html" %}
+<!-- BODY -->
+	<!-- MAIN SECTION -->
+	<section class="main_section container-fluid">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+
+					<!-- MOBILE MENU -->
+					<div class="mobile_menu">
+						<div class="dropdown">
+						  	<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Specialty&nbsp;&nbsp;<span class="caret"></span></button>
+						  	<ul class="dropdown-menu">
+						    	<li><a href="#" data-toggle="modal" data-target="#specialty_modal">HTML</a></li>
+						    	<li><a href="#" data-toggle="modal" data-target="#specialty_modal">CSS</a></li>
+						    	<li><a href="#" data-toggle="modal" data-target="#specialty_modal">JavaScript</a></li>
+						  	</ul>
+						</div>
+						<button class="mob_menu_btn">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span> 
+						</button>
+						<div class="mob_right_menu">
+							<div class="head">
+								<div class="close_menu">
+									<button><i class="fa fa-times"></i></button>
+								</div><br>
+								<form action="" method="">
+									<div class="form-group">
+										<input type="search" name="search" class="form-control" placeholder="Search">
+										<button><i class="fa fa-search"></i></button>
+									</div>
+								</form>
+							</div>
+							<ul>
+								<li><a href="">University</a></li>
+								<li><a href="">Terms and Conditions</a></li>
+								<li><a href="">Privacy and Policy</a></li>
+								<li><a href="">About Nicecho</a></li>
+								<li><a href="">Settings</a></li>
+								<li><a href="">Log Out</a></li>
+							</ul>
+						</div>
+					</div>
+				<!-- MOBILE MENU END -->
+
+				<!-- LEFT ASIDE -->
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="left_aside">
+							<div class="profile_info">
+								<div class="profile_photo">
+									<img class="img-thumbnail" src="{% static "assets/img/profile.jpg" %}">
+									<i class="fa fa-camera" title="change photo" data-target="#change_profile_photo_modal" data-toggle="modal"></i>
+								</div>
+								<div class="info">
+									<h3>{{ post_list.user }}</h3>
+									<label>Status :</label>&nbsp;<span>Reader</span><br>
+									<label>Student :</label>&nbsp;<span>Azerbaijan State Oil and Industry University - Information technologies and systems enjineering</span>
+								</div>
+							</div>
+							<div class="advertisement">
+								
+							</div>
+						</div>
+					</div>
+				<!-- LEFT ASIDE END -->
+
+				<!-- POSTS -->
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="main_part">
+							<!-- WRITE ARTICLE -->
+							<div class="ask_question">
+								<div class="write_question">
+									<textarea placeholder="Ask question"></textarea>
+									<div class="uploaded_photo">
+										<label class="file_input" for="file-input">
+											<a class="" title="add photo"><i class="fa fa-plus-circle"></i> Photo</a>
+										</label>
+										<input id="file-input" type="file"/>
+										<img id="question_img" src="">
+									</div>
+								</div>
+								<div class="buttons_box">
+									<a class="" title="write large article" data-target="#write_article_modal" data-toggle="modal">Write an article</a>
+									<form action="" method="">
+										<select class="choose_specialty">
+											<option value="" disabled selected hidden>Choose specialty</option>
+											<option value="">dsdfsfsfsdfsfsdsdvddddddddddddddddddd</option>
+											<option value="">dsdfsfsfsdfsfs</option>
+											<option value="">dsdfsfsfsdfsfs</option>
+											<option value="">dsdfsfsfsdfsfs</option>
+											<option value="">dsdfsfsfsdfsfs</option>
+										</select>
+										<button type="submit" class="btn share_question_btn" title="share">Share</button>
+									</form>
+								</div>
+							</div>
+							<!-- WRITE ARTICLE END -->
+
+							<div class="shared_news">
+								<div class="person_info">
+									<h3><a href="">{{ post_list.user }}</a></h3>
+									<span>Azerbaijan State Oil and Industry University - Information technologies and systems engineering</span>
+								</div>
+								<div class="post_info">
+									<h4>{{ post_list.title }}</h4>
+									<p>Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures (or algorithms) that underlie the acquisition, representation, processing, storage, communication of, and access to, information. An alternate, more succinct definition of computer science is the study of automating algorithmic processes that scale. A computer scientist specializes in the theory of computation and the design of computational systems.[1] See glossary of computer science. Its fields can be divided into a variety of theoretical and practical disciplines. Some fields, such as computational complexity theory (which explores the fundamental properties of computational and intractable problems), are highly abstract, while fields such as computer graphics emphasize real-world visual applications. Other fields still focus on challenges in implementing computation. For example, programming language theory considers various approaches to the description of computation, while the study of computer programming itself investigates various aspects of the use of programming language and complex systems. Human-computer interaction considers the challenges in making computers and computations useful, usable, and universally accessible to humans.</p>....&nbsp;
+									<a href="">read more</a>
+								</div>
+							</div>
+							<div class="shared_news">
+								<div class="person_info">
+									<h3><a href="">Nurlan Qenberli</a></h3>
+									<span>Azerbaijan State Oil and Industry University - Information technologies and systems engineering</span>
+								</div>
+								<div class="post_info">
+									<h4>What's computer science?</h4>
+									<p>Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures (or algorithms) that underlie the acquisition, representation, processing, storage, communication of, and access to, information. An alternate, more succinct definition of computer science is the study of automating algorithmic processes that scale. A computer scientist specializes in the theory of computation and the design of computational systems.[1] See glossary of computer science. Its fields can be divided into a variety of theoretical and practical disciplines. Some fields, such as computational complexity theory (which explores the fundamental properties of computational and intractable problems), are highly abstract, while fields such as computer graphics emphasize real-world visual applications. Other fields still focus on challenges in implementing computation. For example, programming language theory considers various approaches to the description of computation, while the study of computer programming itself investigates various aspects of the use of programming language and complex systems. Human-computer interaction considers the challenges in making computers and computations useful, usable, and universally accessible to humans.</p>....&nbsp;
+									<a href="">read more</a>
+									<img src="{% static "assets/img/post_img.jpg" %}">
+								</div>
+							</div>
+							<div class="shared_news">
+								<div class="person_info">
+									<h3><a href="">Nurlan Qenberli</a></h3>
+									<span>Azerbaijan State Oil and Industry University - Information technologies and systems engineering</span>
+								</div>
+								<div class="post_info">
+									<h4>What's computer science?</h4>
+									<p>Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures (or algorithms) that underlie the acquisition, representation, processing, storage, communication of, and access to, information. An alternate, more succinct definition of computer science is the study of automating algorithmic processes that scale. A computer scientist specializes in the theory of computation and the design of computational systems.[1] See glossary of computer science. Its fields can be divided into a variety of theoretical and practical disciplines. Some fields, such as computational complexity theory (which explores the fundamental properties of computational and intractable problems), are highly abstract, while fields such as computer graphics emphasize real-world visual applications. Other fields still focus on challenges in implementing computation. For example, programming language theory considers various approaches to the description of computation, while the study of computer programming itself investigates various aspects of the use of programming language and complex systems. Human-computer interaction considers the challenges in making computers and computations useful, usable, and universally accessible to humans.</p>....&nbsp;
+									<a href="">read more</a>
+									<img src="{% static "assets/img/article_img2.jpg" %}">
+								</div>
+							</div>
+							<div class="shared_news">
+								<div class="person_info">
+									<h3><a href="">Nurlan Qenberli</a></h3>
+									<span>Azerbaijan State Oil and Industry University - Information technologies and systems engineering</span>
+								</div>
+								<div class="post_info">
+									<h4>What's computer science?</h4>
+									<p>Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures (or algorithms) that underlie the acquisition, representation, processing, storage, communication of, and access to, information. An alternate, more succinct definition of computer science is the study of automating algorithmic processes that scale. A computer scientist specializes in the theory of computation and the design of computational systems.[1] See glossary of computer science. Its fields can be divided into a variety of theoretical and practical disciplines. Some fields, such as computational complexity theory (which explores the fundamental properties of computational and intractable problems), are highly abstract, while fields such as computer graphics emphasize real-world visual applications. Other fields still focus on challenges in implementing computation. For example, programming language theory considers various approaches to the description of computation, while the study of computer programming itself investigates various aspects of the use of programming language and complex systems. Human-computer interaction considers the challenges in making computers and computations useful, usable, and universally accessible to humans.</p>....&nbsp;
+									<a href="">read more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- POSTS END -->
+
+				<!-- RIGHT ASIDE -->
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="right_aside">
+							<div class="popular_posts">
+								<h3 class="text-center">Popular posts of the week</h3>
+								<ul>
+									<li>
+										<h4><a href="">Nurlan Qenberli</a></h4>
+										<a href="">What's computer science?</a>
+										<span>8&nbsp;&nbsp;<img src="{% static "assets/img/buta_boy.jpg" %}"></span>
+									</li>
+									<li>
+										<h4><a href="">Nurlan Qenberli</a></h4>
+										<a href="">What's computer science?</a>
+										<span>8&nbsp;&nbsp;<img src="{% static "assets/img/buta_boy.jpg" %}"></span>
+									</li>
+									<li>
+										<h4><a href="">Nurlan Qenberli</a></h4>
+										<a href="">What's computer science?</a>
+										<span>8&nbsp;&nbsp;<img src="{% static "assets/img/buta_boy.jpg" %}"></span>
+									</li>
+									<li>
+										<h4><a href="">Nurlan Qenberli</a></h4>
+										<a href="">What's computer science?</a>
+										<span>8&nbsp;&nbsp;<img src="{% static "assets/img/buta_boy.jpg" %}"></span>
+									</li>
+									<li>
+										<h4><a href="">Nurlan Qenberli</a></h4>
+										<a href="">What's computer science?</a>
+										<span>8&nbsp;&nbsp;<img src="{% static "assets/img/buta_boy.jpg" %}"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<!-- RIGHT ASIDE END -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- MAIN SECTION END -->
+<!-- BODY END -->
+
+<!-- CHANGE PROFILE PHOTO -->
+<div id="change_profile_photo_modal" class="change_profile_photo_modal modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Change Profile Photo</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="select_photo text-center">
+						    <label class="file_input" for="file-input">
+								<i class="fa fa-plus-circle"></i><br>
+								<span>Select new photo</span>
+							</label>
+							<input id="profile-img-input" type="file"/>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="new_photo">
+							<img id="profile_img" src="{% static "assets/img/profile.jpg" %}">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="cancel" class="btn" data-dismiss="modal">Cancel</button>
+				<button type="submit" class="btn">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CHANGE PROFILE PHOTO END -->
+
+
+
+<!-- WRITE ARTICLE MODAL -->
+<div id="write_article_modal" class="write_article_modal modal fade" role="dialog">
+  	<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Write Article</h4>
+      		</div>
+      		<form action="" method="">
+      			<div class="modal-body">
+        			<div class="user_profile_img">
+        				<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        			</div>
+        			<div class="write_article">
+        				<input type="text" name="article_title" placeholder="Article title">
+        				<textarea placeholder="Write article"></textarea>
+        			</div>
+        			<div class="uploaded_photo">
+        				<label class="file_input" for="file-input">
+							<span class="" title="add photo"><i class="fa fa-plus-circle"></i> Photo</span>
+						</label>
+						<input id="article-img-input" type="file"/>
+						<img id="article_img" src="">
+        			</div>
+      			</div>
+      			<div class="modal-footer">
+      				<select class="choose_specialty">
+						<option value="" disabled selected hidden>Choose specialty</option>
+						<option value="">dsdfsfsfsdfsfsdsdvddddddddddddddddddd</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+					</select>
+       				<button type="submit" class="btn">Share</button>
+      			</div>
+      		</form>
+    	</div>
+  	</div>
+</div>
+<!-- WRITE ARTICLE MODAL END -->
+{% include "snippets/footer.html" %}
+{% include "snippets/modals.html" %}

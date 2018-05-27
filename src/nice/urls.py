@@ -33,7 +33,8 @@ urlpatterns = [
     url(r'^$', RegisterView.as_view(), name='register'),
 
     url(r'^login/$', LoginView.as_view(), name='login'),
-    url(r'^u/', include('profiles.urls', namespace='profiles')),
+    # url(r'^u/', include('profiles.urls', namespace='profiles')),
+    # url(r'^u/', ProfileDetailView.as_view()),
 
 
      

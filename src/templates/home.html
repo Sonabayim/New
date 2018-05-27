@@ -1,5 +1,6 @@
 {% load static %}
-{% include "snippets/nav.html" %}
+{% include "snippets/header.html" %}
+
 <!-- BODY -->
 	<!-- MAIN SECTION -->
 	<section class="main_section container-fluid">
@@ -55,22 +56,22 @@
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>8&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>8&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>8&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>8&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>8&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>8&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>8&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>8&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 								</ul>
 							</div>
@@ -85,7 +86,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="main_part">
 							<!-- WRITE ARTICLE -->
-							{% if request.user.is_authenticated %}
+							
 							<div class="ask_question">
 								<div class="write_question">
 									<textarea placeholder="Ask question"></textarea>
@@ -102,17 +103,18 @@
 									<form action="" method="">
 										<select class="choose_specialty">
 											<option value="" disabled selected hidden>Choose specialty</option>
-											<option value="">dsdfsfsfsdfsfsdsdvddddddddddddddddddd</option>
+											{% for obj in object_list %}
+											<option value="">{{ obj }}</option>
+											{% endfor %}
+<!-- 											<option value="">dsdfsfsfsdfsfs</option>
 											<option value="">dsdfsfsfsdfsfs</option>
 											<option value="">dsdfsfsfsdfsfs</option>
 											<option value="">dsdfsfsfsdfsfs</option>
-											<option value="">dsdfsfsfsdfsfs</option>
-										</select>
+ -->										</select>
 										<button type="submit" class="btn share_question_btn" title="share">Share</button>
 									</form>
 								</div>
 							</div>
-							{% endif %}
 
 							<!-- WRITE ARTICLE END -->
 								{% for post in post_list %}
@@ -122,11 +124,10 @@
 										<span>Azerbaijan State Oil and Industry University - Information technologies and systems engineering</span>
 									</div>
 									<div class="post_info">
-										<h4>{{ post.title }}|{{ post.id }}</h4>
+										<h4>{{ post.id }}.{{ post.title }}</h4>
 										<p>{{ post.content }}</p>....&nbsp;
 										<a href="/article/{{ post.id }}">read more</a>
-										<!-- href="/article/{{ post.id }}" -->
-										<img src="{%static "assets-home/img/post_img.jpg" %}">
+										<img src="{%static "assets/img/post_img.jpg" %}">
 									</div>
 								</div>
 								{% endfor %}
@@ -142,12 +143,12 @@
 								<h3 class="text-center">Rating profiles of the week</h3>
 								<ul>
 									{% for user in user_list %}
-									<li><a href="">{{ user }}&nbsp;</a><span>21&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span></li>
+									<li><a href="">{{ user }}&nbsp;</a><span>21&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
 									{% endfor %}<!-- 
-									<li><a href="">2.Nurlan Qenberli&nbsp;</a><span>18&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">3.Nurlan Qenberli&nbsp;</a><span>15&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">4.Nurlan Qenberli&nbsp;</a><span>14&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">5.Nurlan Qenberli&nbsp;</a><span>10&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span></li> -->
+									<li><a href="">2.Nurlan Qenberli&nbsp;</a><span>18&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
+									<li><a href="">3.Nurlan Qenberli&nbsp;</a><span>15&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
+									<li><a href="">4.Nurlan Qenberli&nbsp;</a><span>14&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
+									<li><a href="">5.Nurlan Qenberli&nbsp;</a><span>10&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li> -->
 								</ul>
 							</div>
 							<div class="popular_posts">
@@ -156,27 +157,27 @@
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>8&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>8&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>7&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>7&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>5&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>5&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>4&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>4&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 									<li>
 										<h4><a href="">Nurlan Qenberli</a></h4>
 										<a href="">What's computer science?</a>
-										<span>4&nbsp;&nbsp;<img src="{%static "assets-home/img/buta_boy.jpg" %}"></span>
+										<span>4&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span>
 									</li>
 								</ul>
 							</div>
@@ -191,9 +192,9 @@
 <!-- BODY END -->
 
 <!-- WRITE ARTICLE MODAL -->
-<div id="write_article_modal" class="write_article_modal modal fade" role="dialog">
+<!-- <div id="write_article_modal" class="write_article_modal modal fade" role="dialog">
   	<div class="modal-dialog">
-    	<!-- Modal content-->
+    	
     	<div class="modal-content">
       		<div class="modal-header">
         		<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -202,14 +203,14 @@
       		<form action="" method="">
       			<div class="modal-body">
         			<div class="user_profile_img">
-        				<img class="img-circle" src="{%static "assets-home/img/profile.jpg" %}">
+        				<img class="img-circle" src="{%static "assets/img/profile.jpg" %}">
         			</div>
         			<form method='POST'> {% csrf_token %}
         			<div class="write_article">
-        				<!-- <form> -->
+        				
         				<input type="text" name="article_title" placeholder="Article title">
         				<textarea placeholder="Write article"></textarea>
-        				<!-- </form> -->
+        				
         			</div>
         			<div class="uploaded_photo">
         				<label class="file_input" for="file-input">
@@ -222,17 +223,18 @@
       			<div class="modal-footer">
       				<select class="choose_specialty">
 						<option value="" disabled selected hidden>Choose specialty</option>
-						<option value="">dsdfsfsfsdfsfsdsdvddddddddddddddddddd</option>
-						<option value="">dsdfsfsfsdfsfs</option>
-						<option value="">dsdfsfsfsdfsfs</option>
-						<option value="">dsdfsfsfsdfsfs</option>
-						<option value="">dsdfsfsfsdfsfs</option>
-					</select>
+						{% for obj in object_list %}
+						<option value="">{{ obj }}</option>
+						{% endfor %}
+ 					</select>
        				<button type="submit" class="btn">Share</button>
        					</form>
       			</div>
       		</form>
     	</div>
   	</div>
-</div>
+</div> -->
 <!-- WRITE ARTICLE MODAL END -->
+{% include "snippets/modals.html" %}
+
+{% include "snippets/footer.html"%}

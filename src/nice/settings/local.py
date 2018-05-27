@@ -162,6 +162,9 @@ REGISTRATION_AUTO_LOGIN = True
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = "/home/"
 
+
+LOGOUT_REDIRECT_URL = "/"
+
 # DEFAULT_FROM_EMAIL = 'huseynzade.sonabeyim@gmail.com'
 
 EMAIL_USE_TLS = False

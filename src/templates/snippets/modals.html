@@ -1,0 +1,164 @@
+<!-- PAGE MODALS -->
+{% load static %}
+<!-- SPECIALTY MODAL -->
+<div id="specialty_modal" class="specialty_modal modal fade" role="dialog">
+  	<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Representatives of Information technologies and systems engineering</h4>
+      		</div>
+      		<div class="modal-body">
+        		<ul>
+        			<li>
+        				<div class="img_representative">
+        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        				</div>&nbsp;&nbsp;
+        				<div class="info_representative">
+        					<h3><a href="">Nurlan Qenberli</a></h3>
+        					<span>Azerbaijan State Oil and Industry University</span>
+        				</div>
+        				<button class="btn">Message</button>
+        			</li>
+        			<li>
+        				<div class="img_representative">
+        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        				</div>&nbsp;&nbsp;
+        				<div class="info_representative">
+        					<h3><a href="">Nurlan Qenberli</a></h3>
+        					<span>Azerbaijan State Oil and Industry University</span>
+        				</div>
+        				<button class="btn">Message</button>
+        			</li>
+        			<li>
+        				<div class="img_representative">
+        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        				</div>&nbsp;&nbsp;
+        				<div class="info_representative">
+        					<h3><a href="">Nurlan Qenberli</a></h3>
+        					<span>Azerbaijan State Oil and Industry University</span>
+        				</div>
+        				<button class="btn">Message</button>
+        			</li>
+        			<li>
+        				<div class="img_representative">
+        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        				</div>&nbsp;&nbsp;
+        				<div class="info_representative">
+        					<h3><a href="">Nurlan Qenberli</a></h3>
+        					<span>Azerbaijan State Oil and Industry University</span>
+        				</div>
+        				<button class="btn">Message</button>
+        			</li>
+        		</ul>
+      		</div>
+      		<!-- <div class="modal-footer">
+      				
+      		</div> -->
+    	</div>
+  	</div>
+</div>
+<!-- SPECIALTY MODAL END -->
+
+
+<!-- SEARCH SECTION -->
+<section class="search_section">
+	<div id="search_modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button href="" data-dismiss="modal" class="close"><i class="fa fa-times"></i></button>
+				<div class="container">
+					<form action="" method="">
+						<div class="form-group">
+							<input type="search" name="search" placeholder="Search" class="form-control">
+							<button class="search_btn"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- SEARCH SECTION END -->
+
+
+<!-- WRITE ARTICLE MODAL -->
+<div id="write_article_modal" class="write_article_modal modal fade" role="dialog">
+  	<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Write Article</h4>
+      		</div>
+      		<form action="" method="">
+      			<div class="modal-body">
+        			<div class="user_profile_img">
+        				<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+        			</div>
+        			<div class="write_article">
+        				<input type="text" name="article_title" placeholder="Article title">
+        				<textarea placeholder="Write article"></textarea>
+        			</div>
+        			<div class="uploaded_photo">
+        				<label class="file_input" for="file-input">
+							<span class="" title="add photo"><i class="fa fa-plus-circle"></i> Photo</span>
+						</label>
+						<input id="article-img-input" type="file"/>
+						<img id="article_img" src="">
+        			</div>
+      			</div>
+      			<div class="modal-footer">
+      				<select class="choose_specialty">
+						<option value="" disabled selected hidden>Choose specialty</option>
+						<option value="">dsdfsfsfsdfsfsdsdvddddddddddddddddddd</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+						<option value="">dsdfsfsfsdfsfs</option>
+					</select>
+       				<button type="submit" class="btn">Share</button>
+      			</div>
+      		</form>
+    	</div>
+  	</div>
+</div>
+<!-- WRITE ARTICLE MODAL END -->
+
+
+<!-- CHANGE PROFILE PHOTO -->
+<div id="change_profile_photo_modal" class="change_profile_photo_modal modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Change Profile Photo</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="select_photo text-center">
+						    <label class="file_input" for="file-input">
+								<i class="fa fa-plus-circle"></i><br>
+								<span>Select new photo</span>
+							</label>
+							<input id="profile-img-input" type="file"/>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="new_photo">
+							<img id="profile_img" src="{% static "assets/img/profile.jpg" %}">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="cancel" class="btn" data-dismiss="modal">Cancel</button>
+				<button type="submit" class="btn">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CHANGE PROFILE PHOTO END -->

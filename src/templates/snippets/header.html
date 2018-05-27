@@ -1,0 +1,285 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nicecho</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+	<meta name="description" content="NICECHO is a place where young generation improve yourself. Welcome to around us.">
+	<meta name="keywords" content="www.nicecho.com">
+	<meta name="author" content="Nicecho Team">
+
+	<!-- style.css-->
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/home.css" %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/article.css" %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/profile.css" %}">
+
+	<!-- responsive.css-->
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/home_responsive.css" %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/article_responsive.css" %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/profile_responsive.css" %}">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+
+	<link rel="icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+
+	<!-- font-awesome-->
+	<link rel="stylesheet" type="text/css" href="{% static "assets/font-awesome/css/font-awesome.min.css" %}">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+	<header class="container-fluid">
+		<div class="row">
+			<div class="container">
+				<nav class="navbar">
+				    <div class="navbar-header">
+				    	{% if request.user.is_authenticated %}
+				      	<a class="navbar-brand" href="/home/"><img src="{% static "assets/img/logo_home.png" %}"></a>
+				      	{% else %}
+				      	<a class="navbar-brand" href="/"><img src="{% static "assets/img/logo_home.png" %}"></a>
+				      	{% endif %}
+				      	<!-- MOBILE HEADER -->
+					    <div class="mobile_header text-center">
+					    	<ul>
+					    		<li><a><i class="fa fa-envelope-o mn_list" title="messages"><sup>1</sup><i class="fa fa-sort-up"></i></i></a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+					      		<li><a><i class="fa fa-bell-o mn_list" title="notification"><sup>6</sup><i class="fa fa-sort-up"></i></i></a></li>
+					      		<li><a href="" class="goprofile"><img src="{% static "assets/img/profile.jpg" %}" title="John Wick"></a></li>
+					    	</ul>
+					    </div>
+				    	<!-- MOBILE HEADER END -->
+				    </div>
+				    <div class="collapse navbar-collapse" id="myNavbar">
+				      	<ul class="nav navbar-nav">
+				        	<li class="dropdown select_uni"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fort-awesome"></i> Specialty&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
+				        		<ul class="dropdown-menu all_uni">
+				        			{% for obj in object_list %}
+							        <li><a class="specialty_link" href="#" data-toggle="modal" data-target="#specialty_modal">{{ obj }}</a></li>
+							        {% endfor %}
+							     
+						        </ul>
+				        	</li>
+				      	</ul>
+				      	<ul class="nav navbar-nav navbar-right">
+				      		<li><a><i class="fa fa-envelope-o mn_list" title="messages"><sup>1</sup><i class="fa fa-sort-up"></i></i></a></li>
+				      		<li><a><i class="fa fa-bell-o mn_list" title="notification"><sup>6</sup><i class="fa fa-sort-up"></i></i></a></li>
+				      		<li><a href="" class="goprofile"><img src="{% static "assets/img/profile.jpg" %}" title="John Wick"></a></li>
+				        	<li><a data-toggle="modal" data-target="#search_modal"><i class="fa fa-search" title="search"></i></a></li>
+				        	<li><a class="alt_menu"><i class="fa fa-th"></i></a></li>
+				      	</ul>
+				    </div>
+				    <div class="messages_list" hidden>
+				    	<ul>
+				    		<li>
+				    			<a class="list-group-item new_message">
+					    			<div class="person_profile_img"><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></div>
+					    			<div class="message_info">
+					    				<div class="message_text">
+					    					<h4>Nurlan Qenberli</h4>
+					    					<span>Salam</span>
+					    				</div>
+					    			</div>
+				    			</a>
+				    		</li>
+				    		<li>
+				    			<a href="" class="list-group-item">
+					    			<div class="person_profile_img"><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></div>
+					    			<div class="message_info">
+					    				<div class="message_text">
+					    					<h4>Nurlan Qenberli</h4>
+					    					<span>Salam</span>
+					    				</div>
+					    			</div>
+				    			</a>
+				    		</li>
+				    		<li>
+				    			<a href="" class="list-group-item">
+					    			<div class="person_profile_img"><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></div>
+					    			<div class="message_info">
+					    				<div class="message_text">
+					    					<h4>Nurlan Qenberli</h4>
+					    					<span>Salam</span>
+					    				</div>
+					    			</div>
+				    			</a>
+				    		</li>
+				    	</ul>
+				    </div>
+				    <div class="notifications_list" hidden>
+				    	<ul>
+				    		<li>
+				    			<a href="" class="list-group-item new_notification">
+					    			<span>Nurlan Qenberli give a phakhlava to your post</span>
+				    			</a>
+				    		</li>
+				    		<li>
+				    			<a href="" class="list-group-item">
+					    			<span>Nurlan Qenberli give a phakhlava to your post</span>
+				    			</a>
+				    		</li>
+				    		<li>
+				    			<a href="" class="list-group-item">
+					    			<span>Nurlan Qenberli give a phakhlava to your post</span>
+				    			</a>
+				    		</li>
+				    	</ul>
+				    </div>
+				</nav>
+			</div>
+		</div>
+	</header>
+<!-- HEADER END -->
+
+<!-- MESSAGE BOX -->
+	<div class="message_tab">
+		<div class="message_box" hidden>
+			<div class="header">
+				<a href="">Nurlan Qenberli</a>
+				<span><i class="fa fa-times"></i></span>
+			</div>
+			<div class="body">
+				<div class="conversation">
+					<ul>
+						<li class="against_msg clearfix">
+							<div>
+								<a href=""><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></a>&nbsp;&nbsp;
+								<div class="msg_text"><span>Hellodhvdhvh dhvbhdvhdvbsbd vsvhshv s hsdhvshjvs vsvhsvs vjhsbvhjsbvs vjsbvsbvsh vsjbvsjv dshj</span></div>
+							</div>
+						</li>
+						<li class="your_msg clearfix">
+							<div>
+								<div class="msg_text"><span>Hello</span></div>
+							</div>
+						</li>
+						<li class="against_msg clearfix">
+							<div>
+								<a href=""><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></a>&nbsp;&nbsp;
+								<div class="msg_text"><span>Hellodhvdhvh dhvbhdvhdvbsbd vsvhshv s hsdhvshjvs vsvhsvs vjhsbvhjsbvs vjsbvsbvsh vsjbvsjv dshj</span></div>
+							</div>
+						</li>
+						<li class="your_msg clearfix">
+							<div>
+								<div class="msg_text"><span>Hello ghsfshg hsvfhsvhs fshfvhsvfhs fshfvsfvshvfsn fhsvfhsvhfs fhsvfhsvhf</span></div>
+							</div>
+						</li>
+						<li class="against_msg clearfix">
+							<div>
+								<a href=""><img class="img-circle" src="{% static "assets/img/profile.jpg" %}"></a>&nbsp;&nbsp;
+								<div class="msg_text"><span>Hellodhvdhvh dhvbhdvhdvbsbd vsvhshv s hsdhvshjvs vsvhsvs vjhsbvhjsbvs vjsbvsbvsh vsjbvsjv dshj</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="message_textbox">
+					<form action="" method="">
+						<textarea placeholder="Write message"></textarea>
+						<button type="submit" class="btn">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- MESSAGE BOX END -->
+
+<!-- SEARCH SECTION -->
+	<!-- <section class="search_section">
+		<div id="search_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<button href="" data-dismiss="modal" class="close"><i class="fa fa-times"></i></button>
+					<div class="container">
+						<form action="" method="">
+							<div class="form-group">
+								<input type="search" name="search" placeholder="Search" class="form-control">
+								<button class="search_btn"><i class="fa fa-search"></i></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+<!-- SEARCH SECTION END -->
+
+<!-- RIGHT MENU -->
+	<section class="right_menu_section">
+		<button class="close_right_menu"><i class="fa fa-times"></i></button>
+		<ul>
+			<li><a href="">Terms and Conditions</a></li>
+			<li><a href="">Privacy Policy</a></li>
+			<li><a href="">About Nicecho</a></li>
+			<li><a href="">Settings</a></li>
+			<li><a href="">Language</a></li>
+			<li><a href="">Log Out</a></li>
+		</ul>
+	</section>
+<!-- RIGHT MENU END -->
+
+
+
+<!-- SPECIALTY MODAL -->
+	<!-- <div id="specialty_modal" class="specialty_modal modal fade" role="dialog">
+	  	<div class="modal-dialog">
+	    	
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        		<h4 class="modal-title">Representatives of Information technologies and systems engineering</h4>
+	      		</div>
+	      		<div class="modal-body">
+	        		<ul>
+	        			<li>
+	        				<div class="img_representative">
+	        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+	        				</div>&nbsp;&nbsp;
+	        				<div class="info_representative">
+	        					<h3><a href="">Nurlan Qenberli</a></h3>
+	        					<span>Azerbaijan State Oil and Industry University</span>
+	        				</div>
+	        				<button class="btn">Message</button>
+	        			</li>
+	        			<li>
+	        				<div class="img_representative">
+	        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+	        				</div>&nbsp;&nbsp;
+	        				<div class="info_representative">
+	        					<h3><a href="">Nurlan Qenberli</a></h3>
+	        					<span>Azerbaijan State Oil and Industry University</span>
+	        				</div>
+	        				<button class="btn">Message</button>
+	        			</li>
+	        			<li>
+	        				<div class="img_representative">
+	        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+	        				</div>&nbsp;&nbsp;
+	        				<div class="info_representative">
+	        					<h3><a href="">Nurlan Qenberli</a></h3>
+	        					<span>Azerbaijan State Oil and Industry University</span>
+	        				</div>
+	        				<button class="btn">Message</button>
+	        			</li>
+	        			<li>
+	        				<div class="img_representative">
+	        					<img class="img-circle" src="{% static "assets/img/profile.jpg" %}">
+	        				</div>&nbsp;&nbsp;
+	        				<div class="info_representative">
+	        					<h3><a href="">Nurlan Qenberli</a></h3>
+	        					<span>Azerbaijan State Oil and Industry University</span>
+	        				</div>
+	        				<button class="btn">Message</button>
+	        			</li>
+	        		</ul>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div> -->
+{% include "snippets/modals.html" %}
+</html> 

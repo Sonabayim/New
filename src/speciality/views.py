@@ -8,13 +8,14 @@ from .models import Speciality
 from Post.models import Post
 from Post.forms import PostCreateForm
 from django.contrib.auth import get_user_model
+from profiles.models import Profile
 # from 
 # Create your views here.
 @login_required()
 def speciality_listview(request):
 	template_name = 'home.html'
-	userset = get_user_model()
-	userset = userset.objects.all()
+	# userset = get_user_model()
+	userset = Profile.objects.all()
 	queryset = Speciality.objects.all()
 	postset = reversed(Post.objects.all())
 	context = {

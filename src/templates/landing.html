@@ -63,7 +63,7 @@
 						</div>
 						{% block bootstrap3_content %}
 						{% block content %}
-						<form action="{% url 'home' %}" method="POST" id="sign_up_form">
+						<form action="{% url 'register' %}" method="POST" id="sign_up_form">
 							{% csrf_token %}
 							{{ form|crispy }}
 							
