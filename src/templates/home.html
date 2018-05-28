@@ -1,4 +1,5 @@
 {% load static %}
+
 {% include "snippets/header.html" %}
 
 <!-- BODY -->
@@ -104,13 +105,9 @@
 										<select class="choose_specialty">
 											<option value="" disabled selected hidden>Choose specialty</option>
 											{% for obj in object_list %}
-											<option value="">{{ obj }}</option>
+											<option value="">{{ obj }} </option>
 											{% endfor %}
-<!-- 											<option value="">dsdfsfsfsdfsfs</option>
-											<option value="">dsdfsfsfsdfsfs</option>
-											<option value="">dsdfsfsfsdfsfs</option>
-											<option value="">dsdfsfsfsdfsfs</option>
- -->										</select>
+										</select>
 										<button type="submit" class="btn share_question_btn" title="share">Share</button>
 									</form>
 								</div>
@@ -144,11 +141,7 @@
 								<ul>
 									{% for user in user_list %}
 									<li><a href="">{{ user }}&nbsp;</a><span>21&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
-									{% endfor %}<!-- 
-									<li><a href="">2.Nurlan Qenberli&nbsp;</a><span>18&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">3.Nurlan Qenberli&nbsp;</a><span>15&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">4.Nurlan Qenberli&nbsp;</a><span>14&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li>
-									<li><a href="">5.Nurlan Qenberli&nbsp;</a><span>10&nbsp;&nbsp;<img src="{%static "assets/img/buta_boy.jpg" %}"></span></li> -->
+									{% endfor %}
 								</ul>
 							</div>
 							<div class="popular_posts">

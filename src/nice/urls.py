@@ -27,10 +27,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
      url(r'^home/', speciality_listview, name ='home'),
      # url(r'^home/', SpecialityListView.as_view()),
-     # url(r'^article/$', PostListView.as_view()),
+     # url(r'^activate/$', PostListView.as_view()),
      url(r'^article/',include('Post.urls')),
      # url(r'^article/(?P<pk>\d+)/$', PostListView.as_view()),
     url(r'^$', RegisterView.as_view(), name='register'),
+    url(r'^u/', include('profiles.urls', namespace='profiles')),
 
     url(r'^login/$', LoginView.as_view(), name='login'),
     # url(r'^u/', include('profiles.urls', namespace='profiles')),

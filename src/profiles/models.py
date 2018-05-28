@@ -45,7 +45,7 @@ class Profile(models.Model):
 			path_ = reverse('activate',kwargs={"code": self.activation_key})
 			subject = 'Activate Account'
 			from_email = settings.DEFAULT_FROM_EMAIL
-			message = 'Activate your account here'
+			message = f'Activate your account here: {path_}'
 			recipient_list = [self.user.email]
 			html_message = '<p>Activate your account here</p>'
 			print(html_message)
